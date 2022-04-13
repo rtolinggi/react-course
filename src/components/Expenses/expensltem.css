@@ -35,6 +35,19 @@
   border-radius: 5px;
 }
 
+.tombol {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.tombol:hover {
+  background-color: #40005d;
+  color: white;
+}
+
 @media (min-width: 580px) {
   .expense-item__description {
     flex-direction: row;

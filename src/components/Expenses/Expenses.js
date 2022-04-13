@@ -1,6 +1,6 @@
 import Expenseltem from "./Expenseltem";
 import "./expenses.css";
-import Card from "./Card";
+import Card from "../Ui/Card";
 
 const Expenses = ({ ListItems }) => {
   return (

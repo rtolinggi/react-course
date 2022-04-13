@@ -1,10 +1,16 @@
-import Expenses from "./components/Expenses";
+import React from "react";
+import Expenses from "./components/Expenses/Expenses";
 import ListItems from "./components/ListItems";
+import NewExpenses from "./components/NewExpenses/NewExpenses";
 
 function App() {
+  const addExpenseHandler = (expanse) => {
+    ListItems.push(expanse);
+    console.log(ListItems);
+  };
   return (
     <div style={{ padding: "10px" }}>
-      <h1>Ayo Mulai</h1>
+      <NewExpenses onAddExpanse={addExpenseHandler} />
       <Expenses ListItems={ListItems} />
     </div>
   );
