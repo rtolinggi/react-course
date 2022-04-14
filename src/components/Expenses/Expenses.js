@@ -20,34 +20,30 @@ const Expenses = ({ ListItems }) => {
     setFilteredYear(selectedYear);
   };
 
-  const renderItems = () => {
-    return (
-      <>
-        {filterYear.length === 0 ? (
-          <p style={{ color: "white", textAlign: "center" }}>No Data Result</p>
-        ) : (
-          filterYear.map((el) => {
-            return (
-              <Expenseltem
-                key={el.id}
-                title={el.expenseTitle}
-                amount={el.expenseAmount}
-                date={el.expenseDate}
-              />
-            );
-          })
-        )}
-      </>
-    );
-  };
+  let expenseContent = (
+    <p style={{ color: "white", textAlign: "center" }}>No Data Result</p>
+  );
+
+  if (ListItems.length > 0) {
+    expenseContent = filterYear.map((el) => {
+      return (
+        <Expenseltem
+          key={el.id}
+          title={el.expenseTitle}
+          amount={el.expenseAmount}
+          date={el.expenseDate}
+        />
+      );
+    });
+  }
 
   return (
-    <Card className='expenses'>
+    <Card className="expenses">
       <ExpensesFilter
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {renderItems()}
+      {expenseContent}
     </Card>
   );
 };
