@@ -2,6 +2,7 @@ import React from "react";
 import "./expensltem.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../Ui/Card";
+
 const Expenseltem = ({ date, title, amount }) => {
   const [newTitle, setNewTitle] = React.useState(title);
   const clickHandler = () => {

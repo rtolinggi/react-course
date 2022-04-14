@@ -3,12 +3,12 @@ import "./expenseform.css";
 
 const ExpenseForm = ({ onSaveExpanse }) => {
   const [formData, setFormData] = useState({
-    expanseDate: "",
-    expanseTitle: "",
-    expanseAmount: "",
+    expenseDate: "",
+    expenseTitle: "",
+    expenseAmount: "",
   });
 
-  const { expanseTitle, expanseAmount, expanseDate } = formData;
+  const { expenseTitle, expenseAmount, expenseDate } = formData;
 
   const inputHandler = (e) => {
     setFormData((prevState) => ({
@@ -20,15 +20,15 @@ const ExpenseForm = ({ onSaveExpanse }) => {
   const postData = (e) => {
     e.preventDefault();
     const expenseData = {
-      expanseDate: new Date(expanseDate),
-      expanseTitle,
-      expanseAmount: Number(expanseAmount),
+      expenseDate: new Date(expenseDate),
+      expenseTitle,
+      expenseAmount: Number(expenseAmount),
     };
     onSaveExpanse(expenseData);
     setFormData({
-      expanseTitle: "",
-      expanseAmount: "",
-      expanseDate: "",
+      expenseTitle: "",
+      expenseAmount: "",
+      expenseDate: "",
     });
   };
 
@@ -40,29 +40,29 @@ const ExpenseForm = ({ onSaveExpanse }) => {
           <input
             type='text'
             onChange={inputHandler}
-            value={expanseTitle}
-            name='expanseTitle'
+            value={expenseTitle}
+            name='expenseTitle'
           />
         </div>
         <div className='new-expense__control'>
           <label>Amount</label>
           <input
             type='number'
-            name='expanseAmount'
+            name='expenseAmount'
             min='0.01'
             step='0.01'
             onChange={inputHandler}
-            value={expanseAmount}
+            value={expenseAmount}
           />
         </div>
         <div className='new-expense__control'>
           <label>Date</label>
           <input
             type='date'
-            name='expanseDate'
+            name='expenseDate'
             min='2019-01-01'
             max='2022-12-31'
-            value={expanseDate}
+            value={expenseDate}
             onChange={inputHandler}
           />
         </div>
