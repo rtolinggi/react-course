@@ -17,10 +17,6 @@ const ExpenseForm = ({ onSaveExpanse, closeForm }) => {
     }));
   };
 
-  const closeFormHandler = () => {
-    closeForm(false);
-  };
-
   const postData = (e) => {
     e.preventDefault();
     const expenseData = {
@@ -74,7 +70,7 @@ const ExpenseForm = ({ onSaveExpanse, closeForm }) => {
           <button type="submit">Submit</button>
         </div>
         <div className="new-expense__actions">
-          <button type="button" onClick={closeFormHandler}>
+          <button type="button" onClick={() => closeForm(false)}>
             Cancel
           </button>
         </div>
