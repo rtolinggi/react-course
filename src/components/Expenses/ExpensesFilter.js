@@ -1,3 +1,4 @@
+import Card from "../Ui/Card";
 import "./expensesfilter.css";
 
 const ExpensesFilter = ({ selected, onChangeFilter }) => {
@@ -5,7 +6,7 @@ const ExpensesFilter = ({ selected, onChangeFilter }) => {
     onChangeFilter(e.target.value);
   };
   return (
-    <div className='expenses-filter'>
+    <Card className='expenses-filter'>
       <h3>Filter By Year</h3>
       <select
         value={selected}
@@ -16,7 +17,7 @@ const ExpensesFilter = ({ selected, onChangeFilter }) => {
         <option value='2020'>2020</option>
         <option value='2019'>2019</option>
       </select>
-    </div>
+    </Card>
   );
 };
 

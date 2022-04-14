@@ -1,7 +1,7 @@
 const ListItems = [
   {
     id: 1,
-    expenseDate: new Date(2021, 2, 28),
+    expenseDate: new Date(2022, 2, 28),
     expenseTitle: "Car Insurance",
     expenseAmount: 294.67,
   },
